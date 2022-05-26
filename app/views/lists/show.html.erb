@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+
+<h2>
+  <strong>Name:</strong>
+  <%= @list.name %>
+</h2>
+
+<ul>
+  <% @bookmarks.each do |bookmark| %>
+    <li>
+      <%= bookmark.comment %> |
+      <%= link_to 'Delete bookmark', bookmark_path(bookmark), method: :delete, data: {confirm: 'Are you sure?'} %>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to 'Back', lists_path %>
